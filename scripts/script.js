@@ -3,11 +3,23 @@ const wordDisplay = document.querySelector(".word-display");
 const guessesText = document.querySelector(".guesses-text b");
 const updateimg = document.querySelector(".hangman-box img");
 const gameModel = document.querySelector(".game-model");
-
+const playAgain = document.querySelector(".play-again");
 
 
 let currentWord ,correctLetters = [],wrongGuessCount = 0 ;
 const maxGuesses = 6;
+
+const resetGame = () =>
+{
+    correctLetters = [];
+    wrongGuessCount = 0;
+    wordDisplay.innerHTML = currentWord.split("").map(() => `<li class="letter"></li>`).join("");
+    gameModel.classList.remove("show");
+    updateimg.src = `images/hangman-${wrongGuessCount}.svg`;
+    guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
+    keyboardDiv.querySelectorAll("button").forEach(btn => btn.disabled = false);
+    
+    }
 
 const getRandomWord = () => {
     const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
@@ -15,7 +27,8 @@ const getRandomWord = () => {
 
     console.log(word);
     document.querySelector(".hint-text b").innerText = hint;
-    wordDisplay.innerHTML = word.split("").map(() => `<li class="letter"></li>`).join("");
+    resetGame();
+    
 };
 
 
@@ -41,20 +54,21 @@ const initGame = (button, clickedLetter) => {
                 wordDisplay.querySelectorAll("li")[index].classList.add("guessed");
             }
                 
-        })
+        });
     }
     else {
         wrongGuessCount++;
         updateimg.src = `images/hangman-${wrongGuessCount}.svg`;
-        if (wrongGuessCount === maxGuesses)
-            return gameOver(false);
-        if (correctLetters.length === currentWord.length)
-            return gameOver(true);
+        }
 
-    }
+
     button.disabled = true;
     guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
     
+    if (wrongGuessCount === maxGuesses)
+            return gameOver(false);
+    if (correctLetters.length === currentWord.length)
+        return gameOver(true);
 }
 
 //Creating buttons
@@ -66,3 +80,5 @@ for (let index = 97; index <= 122; index++) {
 }
 
 getRandomWord();
+
+playAgain.addEventListener("click",getRandomWord);
