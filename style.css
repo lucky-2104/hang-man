@@ -1,0 +1,46 @@
+body{
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background : lightblue;
+}
+.container{
+    width:850px;
+    background:lightsalmon;
+    display:flex;
+    gap:70px;
+    align-items: flex-end;
+    padding : 60px 40px;
+    border-radius: 20px;
+}
+
+.hangman-box img{
+    max-width : 270px;
+
+}
+
+.hangman-box h1{
+    font-size: 1.45rem;
+    margin-top : 20px;
+    text-align:center;
+    text-transform: uppercase;
+}
+.word-display{
+    display: flex;
+    gap : 10px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.word-display .letter{
+
+    width:20px;
+    border-bottom: 3px solid black;
+    justify-content: center;
+    text-align: center;
+    text-transform:uppercase ;
+
+}
+
