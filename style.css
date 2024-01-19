@@ -164,6 +164,13 @@ body {
     text-transform: uppercase;
     text-shadow: 0px 0px 5px white;
 }
+/*changed color of victory text*/
+.game-model p b.victory-text {
+  color: green;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 5px white;
+}
 
 .game-model button{
     padding : 12px 12px;

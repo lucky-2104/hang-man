@@ -35,9 +35,11 @@ const getRandomWord = () => {
 const gameOver = (isVictory) => {
     setTimeout(() => {
         const modelText = isVictory ? `You found the word : ` : `The correct word was `;
+        /*add resultText to change color of victory text to green */
+        const resultText = isVictory ? `<b class="victory-text">${currentWord}</b>` : `<b>${currentWord}</b>`;
         gameModel.querySelector("img").src = `images/${isVictory ? 'victory' : 'lost'}.gif`;
         gameModel.querySelector("h4").innerText = `${isVictory ? 'Congrats' : 'Game Over'}`;
-        gameModel.querySelector("p").innerHTML = `${modelText}<b>${currentWord}</b>`;
+        gameModel.querySelector("p").innerHTML = `${modelText}<b>${resultText}</b>`;
         gameModel.classList.add("show");
     },300)
     
