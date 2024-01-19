@@ -4,18 +4,19 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: lightblue;
+  background: rgba(254, 236, 176, 255);
 }
 
 
 .container {
   width: 850px;
-  background: lightsalmon;
+  background: rgba(249, 182, 109, 255);
   display: flex;
   gap: 70px;
   align-items: flex-end;
   padding: 60px 40px;
   border-radius: 20px;
+  box-shadow: 0px 0px 10px black;
 }
 
 .hangman-box img {
@@ -42,13 +43,16 @@ body {
   justify-content: center;
   text-align: center;
   text-transform: uppercase;
+  text-shadow: 0px 0px 5px rgba(251, 234, 172, 255);
 }
+
 .word-display .letter.guessed {
   border-color: transparent;
   font-size: larger;
-  color: brown;
+  color: black;
   margin: -2px 0 35px;
   margin-bottom: 15px;
+  text-shadow: 0px 0px 5px rgba(251, 234, 172, 255);
 }
 
 .game-box h4 {
@@ -56,12 +60,15 @@ body {
   font-size: 1.1rem;
   font-weight: 500;
   margin-bottom: 15px;
+  text-shadow: 0px 0px 5px rgba(251, 234, 172, 255);
 }
 
 .game-box h4 b {
   font-weight: 600;
+  text-shadow: 0px 0px 5px rgba(251, 234, 172, 255);
 }
 .game-box .guesses-text b {
+  text-shadow: 0px 0px 5px rgba(251, 234, 172, 255);
   color: red;
 }
 
@@ -74,17 +81,17 @@ body {
 }
 
 :where(.game-model , .keyboard) button{
-  color: black;
+  color: white;
+  text-shadow: 0px 0px 5px black;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   border: none;
   outline: none;
-  background-color: lightblue;
+  background-color: rgba(101, 94, 118, 255);
+  box-shadow: 0px 0px 5px rgba(251, 234, 172, 255);
   border-radius: 5px;
   text-transform: uppercase;
-  
-
 }
 
 
@@ -99,7 +106,8 @@ body {
 }
 
 .keyboard button:hover {
-  background: blueviolet;
+  background: rgba(47, 62, 114, 255);
+  box-shadow: 0px 0px 5px white;
 }
 
 .game-model{
@@ -121,37 +129,40 @@ body {
 .game-model.show{
     opacity: 1;
     pointer-events: auto;
-
 }
 
 
 .game-model .content{
-    background: white;
+    background: rgb(188, 225, 229);
     max-width: 420px;
     width:100%;
     text-align: center;
     border-radius: 10px ;
     padding: 20px;
+    box-shadow: 0px 0px 10px black;
 }
 .game-model img{
     max-width: 130px;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
 }
 
 .game-model h4{
     font-size:1.53rem;
+    text-shadow: 0px 0px 5px white;
 }
 
 .game-model p{
     font-size:1.15rem;
-    margin:15px 0 30px;
+    margin:5px 0 30px;
     font-weight: 600;
-
+    text-shadow: 0px 0px 5px white;
 }
 
 .game-model p b {
-    color : lightpink;
-    font-weight: 500;
+    color : red;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 5px white;
 }
 
 .game-model button{
@@ -159,7 +170,7 @@ body {
     
 }
 .game-model button:hover{
-    color:red;
+    background: rgba(47, 62, 114, 255);
 }
 
 @media (max-width:782px){
